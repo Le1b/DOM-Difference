@@ -1,0 +1,39 @@
+#before, #after
+{
+    float: left;
+
+    width: 45%;
+    margin: 0 10px;
+}
+.added
+{
+    margin: 2px 0;
+
+    background: rgb(224, 255, 224);
+    
+    border-radius: 4px;
+}
+.deleted
+{
+    margin: 2px 0;
+
+    background: rgb(255, 224, 224);
+    
+    border-radius: 4px;
+}
+.changed
+{
+    margin: 2px 0;
+
+    background: rgb(255, 244, 224);
+    
+    border-radius: 4px;
+}
+.blue
+{
+    margin: 2px 0;
+
+    background: rgb(224, 224, 255);
+    
+    border-radius: 4px;
+}
