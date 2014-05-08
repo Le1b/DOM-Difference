@@ -1,32 +1,14 @@
 #before, #after
 {
     float: left;
+    overflow: hidden;
 
     width: 45%;
     margin: 0 10px;
+    padding: 5px;
+
     border-width: 1px;
     border-style: solid;
     border-color: #c3c3c3;
-    padding: 5px;
-    overflow: hidden;
-}
-.added
-{
-    border-radius: 4px;
-    background-color: #bce8c0;
-}
-.deleted
-{
-    border-radius: 4px;
-    background-color: #ffe1d9;
-}
-.changed
-{
-    border-radius: 4px;
-    background-color: #ffc;
-}
-.equal
-{
-    border-radius: 4px;
-    background-color: #d6ffff;
+    border-radius: 8px;
 }

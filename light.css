@@ -1,0 +1,16 @@
+.added {
+    border-radius: 4px;
+    background-color: #bce8c0;
+}
+.deleted {
+    border-radius: 4px;
+    background-color: #ffe1d9;
+}
+.changed {
+    border-radius: 4px;
+    background-color: #ffc;
+}
+.equal {
+    border-radius: 4px;
+    background-color: #d6ffff;
+}
