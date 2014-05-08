@@ -4,36 +4,29 @@
 
     width: 45%;
     margin: 0 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c3c3c3;
+    padding: 5px;
+    overflow: hidden;
 }
 .added
 {
-    margin: 2px 0;
-
-    background: rgb(224, 255, 224);
-    
     border-radius: 4px;
+    background-color: #bce8c0;
 }
 .deleted
 {
-    margin: 2px 0;
-
-    background: rgb(255, 224, 224);
-    
     border-radius: 4px;
+    background-color: #ffe1d9;
 }
 .changed
 {
-    margin: 2px 0;
-
-    background: rgb(255, 244, 224);
-    
     border-radius: 4px;
+    background-color: #ffc;
 }
-.blue
+.equal
 {
-    margin: 2px 0;
-
-    background: rgb(224, 224, 255);
-    
     border-radius: 4px;
+    background-color: #d6ffff;
 }
