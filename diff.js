@@ -18,28 +18,24 @@ window.diff = function(dataBefore, dataAfter, result) {
     // В циклі зрівнюються елементи на можливі варіанти додавання/видалення/зміни
     for (var i = 0; i < arr.length; i++) {
 
-        // Якщо в одному із масивів елемент відсутній то виникло додавання/видалення елемента
-        if ((dataBefore[i] == undefined) || (dataAfter[i] == undefined)) {
+        // Якщо у блоці ДО елемент відсутній
+        if (!dataBefore[i]) {
+            // Підсвічуємо елемент у блоці ПІСЛЯ змін як доданий
+            dataAfter[i].classList.add('added');
+            // Додаємо у масив елемент та вказуємо що він доданий у блок ПІСЛЯ
+            result.push({
+                type: 'added',
+                element: dataAfter[i]
+            });
 
-            // Якщо у блоці ДО елемент відсутній
-            if (dataBefore[i] == undefined) {
-                // Підсвічуємо елемент у блоці ПІСЛЯ змін як доданий
-                dataAfter[i].classList.add('added');
-                // Додаємо у масив елемент та вказуємо що він доданий у блок ПІСЛЯ
-                result.push({
-                    type: 'added',
-                    element: dataAfter[i]
-                });
-
-            } else {
-                // Підсвічуємо елемент у блоці ДО змін як видалений
-                dataBefore[i].classList.add('deleted');
-                // Додаємо у масив елемент та вказуємо що він видалений з блоку ДО
-                result.push({
-                    type: 'removed',
-                    element: dataBefore[i]
-                });
-            }
+        } else if (!dataAfter[i]) {
+            // Підсвічуємо елемент у блоці ДО змін як видалений
+            dataBefore[i].classList.add('deleted');
+            // Додаємо у масив елемент та вказуємо що він видалений з блоку ДО
+            result.push({
+                type: 'removed',
+                element: dataBefore[i]
+            });
 
         // Перевіряємо чи теги та вміс елементів однакові
         } else if ((dataBefore[i].nodeName == dataAfter[i].nodeName) && (dataBefore[i].innerHTML == dataAfter[i].innerHTML)) {
@@ -48,7 +44,7 @@ window.diff = function(dataBefore, dataAfter, result) {
             dataBefore[i].classList.add('equal');
             dataAfter[i].classList.add('equal');
 
-        // Перевіряємо якщо теги однакові, але вміст відрізняється
+            // Перевіряємо якщо теги однакові, але вміст відрізняється
         } else if ((dataBefore[i].nodeName == dataAfter[i].nodeName) && (dataBefore[i].innerHTML != dataAfter[i].innerHTML)) {
 
             // Визиваємо рекурсиво ф-цію diff та передаємо дочірні елементи та масив об'єктів
@@ -66,7 +62,7 @@ window.diff = function(dataBefore, dataAfter, result) {
                 html: dataAfter[i].innerHTML
             });
 
-        // Перевіряємо на випадок різних тегів
+            // Перевіряємо на випадок різних тегів
         } else if (dataBefore[i].nodeName != dataAfter[i].nodeName) {
             // Підсвічуємо елементи у блоках ДО та ПІСЛЯ змін як видалені та додані
             dataBefore[i].classList.add('deleted');
