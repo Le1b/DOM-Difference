@@ -1,12 +1,12 @@
 # DOM Difference
 
-### Скрипт спеціально розроблений для чемпіонату UA WebChalange у номінації Junior JavaScript.
+### Script specially developed for UA Web Challenge in category JavaScript Developer.
 
-Функція diff порівнює між собою два HTML фрагменти з id="before" та id="after". Якщо у фрагментах є відмінності:
+The function 'diff' compares a two DOM element with id="before" and id="after". If the fragments has differences:
 
-1. елементи однакові(теги, вміст), вони підсвічуються синім кольором;
-1. теги елементів однакові, але вміс різний, вони підсвідчуються жовтим кольором та вважаються зміненими;
-1. елемент який є у блокі AFTER, але відсутній у BEFORE, підсвічується зеленим кольором та вважається доданим
-1. елемент який був у блокі BEFORE, але відсутній у блокі AFTER, підсвічується червоним кольором та вважається видаленим
+1. Elements is equals. Highlighting blue colors;
+1. Tag elements is equals, but contains text difference. Highlighting yellow color;
+1. Tag element exist is in the identificator name 'after', but not exist in the identificator with name 'before'.  Highlighting green color;
+1. Tag element exist is in the identificator name 'before', but not exist in the identificator with name 'after'.  Highlighting red color;
 
-Для використання функції потрібно підключити файл diff.js до html документа. Функція повертає масив об'єктів змін.
+For using the function is need to include file 'diff.js' at html file. The function returns is array changes.
